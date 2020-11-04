@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity"
+    android:orientation="vertical"
+    android:gravity="bottom"
+    android:background="@drawable/bg_fundo_principal">
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_navbar"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <ImageView
+            android:id="@+id/icApp"
+            android:layout_width="45dp"
+            android:layout_height="43dp"
+            android:src="@drawable/ic_app" />
+
+        <LinearLayout
+            android:id="@+id/LLToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/LogoApp"
+                android:layout_width="97dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="cursive"
+                android:text="Save Location"
+                android:textAlignment="center"
+                android:textColor="#FF065D"
+                android:textSize="8pt"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/LogoApp2"
+                android:layout_width="97dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="cursive"
+                android:text="USJT - QL"
+                android:textAlignment="center"
+                android:textColor="#FF065D"
+                android:textSize="8pt"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/bg_layer_principal"
+        android:layout_margin="6dp"
+        android:padding="11dp"
+        android:scrollbars="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cardsLocaisRecycleView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scrollbars="vertical"
+            />
+
+        <Button
+            android:id="@+id/buttonAdicionarLocais"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="63dp"
+            android:layout_marginRight="63dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/bg_button_principal"
+            android:text="@string/BAdicionarLocais"
+            android:textColor="@color/Marfim"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:onClick="adicionarLocais"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </LinearLayout>
+
+</LinearLayout>

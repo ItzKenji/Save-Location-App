@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <color name="Rosa">#C539D5</color>
+    <color name="Marfim">#fffff0</color>
+    <color name="azulTop">#23A3BA</color>
+    <color name="verdeTop">#1FCC0C</color>
+    <color name="verdeNavBar">#1FCC0C</color>
+    <color name="azulNavbar">#249F86</color>
+    <color name="verdeTituloCadastro">#43E327</color>
+    <color name="azulTituloCadastro">#2B53CC</color>
+    <color name="amareloBotaoPrincipal">#EDCA19</color>
+    <color name="laranjaBotaoPrincipal">#BC340B</color>
+
+</resources>

@@ -1,0 +1,32 @@
+<resources>
+
+    <string name="app_name">Save Location USJT QL</string>
+
+    <string name="BAdicionarLocais">Agregar Lugares</string>
+
+    <string name="TCadastroDeLocais">Registro de Lugares</string>
+    <string name="CEP">Ingresa tu Código Postal</string>
+    <string name="rua">Introduzca la Calle</string>
+    <string name="numero">Introduzca el Número</string>
+    <string name="bairro">Introduzca el Barrio</string>
+    <string name="cidade">Ingrese a la ciudad</string>
+    <string name="estado">Ingrese el Estado</string>
+    <string name="avisoCadastro">*Compruebe que los campos se han rellenado correctamente*</string>
+    <string name="BConfirmar">Confirmar</string>
+    <string name="BVoltar">Vuelve</string>
+
+    <string name="CDataDeCadastro">Fecha de Registro:</string>
+    <string name="CdataDados">%s</string>
+    <string name="CCEP">Código Postal: %s</string>
+    <string name="CRua">Calle: %s</string>
+    <string name="CBairro">Barrio: %s</string>
+    <string name="CCidade">Ciudad: %s</string>
+    <string name="CEstado">Estado: %s</string>
+    <string name="CLatitude">Latitud:</string>
+    <string name="ClatitudeDados"> %2</string>
+    <string name="Clongitude">Longitud:</string>
+    <string name="ClongitudeDados"> %s</string>
+
+
+
+</resources>

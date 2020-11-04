@@ -1,0 +1,32 @@
+<resources>
+
+    <string name="app_name">Save Location USJT QL</string>
+
+    <string name="BAdicionarLocais">Add Places</string>
+
+    <string name="TCadastroDeLocais">Registration of Places</string>
+    <string name="CEP">Enter Zip Code</string>
+    <string name="rua">Enter Street</string>
+    <string name="numero">Enter the Nº</string>
+    <string name="bairro">Enter the Neighborhood</string>
+    <string name="cidade">Enter City</string>
+    <string name="estado">Enter State</string>
+    <string name="avisoCadastro">*Check if the fields were filled in correctly*</string>
+    <string name="BConfirmar">Confirm</string>
+    <string name="BVoltar">Come back</string>
+
+    <string name="CDataDeCadastro">Registration Date:</string>
+    <string name="CdataDados">%s</string>
+    <string name="CCEP">Zip Code: %s</string>
+    <string name="CRua">Street: %s</string>
+    <string name="CBairro">Neighborhood: %s</string>
+    <string name="CCidade">City: %s</string>
+    <string name="CEstado">State: %s</string>
+    <string name="CLatitude">Latitude:</string>
+    <string name="ClatitudeDados"> %2</string>
+    <string name="Clongitude">Longitude:</string>
+    <string name="ClongitudeDados"> %s</string>
+
+
+
+</resources>
