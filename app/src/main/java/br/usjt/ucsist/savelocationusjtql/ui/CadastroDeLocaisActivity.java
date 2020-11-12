@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,9 +14,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
+import java.util.ArrayList;
+
 import br.usjt.ucsist.savelocationusjtql.R;
 import br.usjt.ucsist.savelocationusjtql.model.Local;
-import br.usjt.ucsist.savelocationusjtql.model.LocalViewModel;
 
 public class CadastroDeLocaisActivity extends AppCompatActivity {
 
@@ -27,7 +29,6 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
     private EditText editTextCidade;
     private EditText editTextEstado;
 
-    private LocalViewModel localViewModel;
     private Local localCorrente;
 
 
@@ -36,32 +37,15 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_de_locais);
 
-        editTextCEP = findViewById(R.id.editTextCEP);
-        editTextRua = findViewById(R.id.editTextRua);
-        editTextNumero = findViewById(R.id.editTextNumero);
-        editTextBairro = findViewById(R.id.editTextBairro);
-        editTextCidade = findViewById(R.id.editTextCidade);
-        editTextEstado = findViewById(R.id.editTextEstado);
-
-        localViewModel = new ViewModelProvider(this).get(LocalViewModel.class);
-        localViewModel.getLocal().observe(this, new Observer<Local>() {
-            @Override
-            public void onChanged(@Nullable final Local local) {
-                updateView(local);
-            }
-        });
-
-        voltarHome = (Button) findViewById(R.id.buttonVoltar);
-        voltarHome.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View view) {
-
-                Intent intent = new Intent(CadastroDeLocaisActivity.this, MainActivity.class);
-                startActivity(intent);
-
-            }
-
-        });
+        card = findViewById(R.id.mensagensRecyclerView);
+        mensagens = new ArrayList<>();
+        adapter = new ChatAdapter(mensagens, this);
+        mensagensRecyclerView.setAdapter(adapter);
+        LinearLayoutManager linearLayoutManager = new
+                LinearLayoutManager(this);
+        linearLayoutManager.setReverseLayout(true);
+        mensagensRecyclerView.setLayoutManager(linearLayoutManager);
+        mensagemEditText = findViewById(R.id.mensagemEditText);
 
     }
 

@@ -23,7 +23,7 @@
     <string name="CCidade">Cidade: %s</string>
     <string name="CEstado">Estado: %s</string>
     <string name="CLatitude">Latitude:</string>
-    <string name="ClatitudeDados"> %2</string>
+    <string name="ClatitudeDados"> %s</string>
     <string name="Clongitude">Longitude:</string>
     <string name="ClongitudeDados"> %s</string>
 
