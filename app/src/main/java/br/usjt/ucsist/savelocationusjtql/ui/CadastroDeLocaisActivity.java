@@ -2,11 +2,9 @@ package br.usjt.ucsist.savelocationusjtql.ui;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,12 +12,27 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
+
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import br.usjt.ucsist.savelocationusjtql.R;
 import br.usjt.ucsist.savelocationusjtql.model.Local;
+import br.usjt.ucsist.savelocationusjtql.model.LocalAdapter;
 
 public class CadastroDeLocaisActivity extends AppCompatActivity {
+
+    private RecyclerView cardsLocaisRecyclerView;
+    private LocalAdapter adapter;
+    private List<Local> locais;
+    private CollectionReference locaisReference;
 
     private Button voltarHome;
     private EditText editTextCEP;
@@ -36,30 +49,22 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_de_locais);
-
-        card = findViewById(R.id.mensagensRecyclerView);
-        mensagens = new ArrayList<>();
-        adapter = new ChatAdapter(mensagens, this);
-        mensagensRecyclerView.setAdapter(adapter);
+        cardsLocaisRecyclerView = findViewById(R.id.cardsLocaisRecycleView); locais =
+                new ArrayList<>();
+        adapter = new LocalAdapter(locais, this);
+        cardsLocaisRecyclerView.setAdapter(adapter);
         LinearLayoutManager linearLayoutManager = new
                 LinearLayoutManager(this);
         linearLayoutManager.setReverseLayout(true);
-        mensagensRecyclerView.setLayoutManager(linearLayoutManager);
-        mensagemEditText = findViewById(R.id.mensagemEditText);
-
+        cardsLocaisRecyclerView.setLayoutManager(linearLayoutManager);
+        editTextRua = findViewById(R.id.editTextRua);
+        editTextNumero = findViewById(R.id.editTextNumero);
+        editTextEstado = findViewById(R.id.editTextEstado);
+        editTextCidade = findViewById(R.id.editTextCidade);
+        editTextCEP = findViewById(R.id.editTextCEP);
+        editTextBairro = findViewById(R.id.editTextBairro);
     }
 
-    private void updateView(Local local){
-        if(local != null && local.getId() > 0){
-            localCorrente = local;
-            editTextEstado.setText(local.getEstado());
-            editTextCidade.setText(local.getCidade());
-            editTextBairro.setText(local.getBairro());
-            editTextNumero.setText(local.getNumero());
-            editTextRua.setText(local.getRua());
-            editTextCEP.setText(local.getCep());
-        }
-    }
 
     public void confirmarCadastro(View view){
         if(validarCampos()){
@@ -72,8 +77,8 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
             localCorrente.setEstado(editTextEstado.getText().toString());
             localCorrente.setNumero(editTextNumero.getText().toString());
             localCorrente.setRua(editTextRua.getText().toString());
-            localViewModel.insert(localCorrente);
             Toast.makeText(this, "Local salvo", Toast.LENGTH_SHORT).show();
+            locaisReference.add(localCorrente);
         }
     }
 
@@ -105,4 +110,30 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
         }
         return  valido;
     }
+
+    private void setupFirebase (){
+        locaisReference = FirebaseFirestore.getInstance().collection("mensagens");
+        getRemoteMsgs();
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        setupFirebase();
+    }
+
+    private void getRemoteMsgs (){
+        locaisReference.addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+                locais.clear();
+                for (DocumentSnapshot doc : queryDocumentSnapshots.getDocuments()){
+                    Local incomingMsg = doc.toObject(Local.class);
+                    locais.add(incomingMsg);
+                }
+                Collections.sort(locais);
+                adapter.notifyDataSetChanged();
+            }
+        });
+    }
+
 }
