@@ -22,6 +22,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 import br.usjt.ucsist.savelocationusjtql.R;
@@ -68,18 +69,15 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
 
 
     public void confirmarCadastro(View view){
-        if(validarCampos()){
-            if(localCorrente == null){
-                localCorrente = new Local();
-            }
-            localCorrente.setBairro(editTextBairro.getText().toString());
-            localCorrente.setCep(editTextCEP.getText().toString());
-            localCorrente.setCidade(editTextCidade.getText().toString());
-            localCorrente.setEstado(editTextEstado.getText().toString());
-            localCorrente.setNumero(editTextNumero.getText().toString());
-            localCorrente.setRua(editTextRua.getText().toString());
-            Toast.makeText(this, "Local salvo", Toast.LENGTH_SHORT).show();
-            locaisReference.add(localCorrente);
+        if(validarCampos()) {
+            String rua = editTextRua.getText().toString();
+            String numero = editTextNumero.getText().toString();
+            String estado = editTextEstado.getText().toString();
+            String cidade = editTextCidade.getText().toString();
+            String cep = editTextCEP.getText().toString();
+            String bairro = editTextBairro.getText().toString();
+            Local l = new Local (cep, rua, numero, bairro, cidade, estado, new Date());
+            locaisReference.add(l);
         }
     }
 

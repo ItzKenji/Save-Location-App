@@ -15,6 +15,21 @@ public class Local{
     private String estado;
     private Date dataCadastro;
 
+    public Local(String dadosLongitude, String dadosLatitude, String cep, String rua, String numero, String bairro, String cidade, String estado, Date dataCadastro) {
+        this.dadosLongitude = dadosLongitude;
+        this.dadosLatitude = dadosLatitude;
+        this.cep = cep;
+        this.rua = rua;
+        this.numero = numero;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.dataCadastro = dataCadastro;
+    }
+
+    public Local(String cep, String rua, String numero, String bairro, String cidade, String estado, Date date) {
+    }
+
     public String getDadosLongitude() {
         return dadosLongitude;
     }
