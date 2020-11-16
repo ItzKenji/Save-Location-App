@@ -21,6 +21,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import br.usjt.ucsist.savelocationusjtql.R;
@@ -130,7 +131,6 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
                     Local incomingMsg = doc.toObject(Local.class);
                     locais.add(incomingMsg);
                 }
-                Collections.sort(locais);
                 adapter.notifyDataSetChanged();
             }
         });

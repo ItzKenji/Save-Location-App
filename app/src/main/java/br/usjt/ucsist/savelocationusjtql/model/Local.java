@@ -15,7 +15,6 @@ public class Local{
     private String estado;
     private Date dataCadastro;
 
-
     public String getDadosLongitude() {
         return dadosLongitude;
     }
