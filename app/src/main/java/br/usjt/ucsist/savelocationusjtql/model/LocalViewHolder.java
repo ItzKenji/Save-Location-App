@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import br.usjt.ucsist.savelocationusjtql.R;
 
-public class LocalViewHolder extends RecyclerView.ViewHolder {
+class LocalViewHolder extends RecyclerView.ViewHolder {
     TextView DataCadastro;
     TextView TextViewCEP;
     TextView TextViewRua;
@@ -19,13 +19,13 @@ public class LocalViewHolder extends RecyclerView.ViewHolder {
 
     LocalViewHolder(View raiz){
         super(raiz);
-        DataCadastro = raiz.findViewById(R.id.DataCadastro);
-        TextViewCEP = raiz.findViewById(R.id.TextViewCEP);
-        TextViewRua = raiz.findViewById(R.id.TextViewRua);
-        TextViewBairro = raiz.findViewById(R.id.TextViewBairro);
-        TextViewCidade = raiz.findViewById(R.id.TextViewCidade);
-        TextViewEstado = raiz.findViewById(R.id.TextViewEstado);
-        DadosDeLatitude = raiz.findViewById(R.id.DadosDeLatitude);
-        DadosDeLongitude = raiz.findViewById(R.id.DadosDeLongitude);
+        this.DataCadastro = raiz.findViewById(R.id.DataCadastro);
+        this.TextViewCEP = raiz.findViewById(R.id.TextViewCEP);
+        this.TextViewRua = raiz.findViewById(R.id.TextViewRua);
+        this.TextViewBairro = raiz.findViewById(R.id.TextViewBairro);
+        this.TextViewCidade = raiz.findViewById(R.id.TextViewCidade);
+        this.TextViewEstado = raiz.findViewById(R.id.TextViewEstado);
+        this.DadosDeLatitude = raiz.findViewById(R.id.DadosDeLatitude);
+        this.DadosDeLongitude = raiz.findViewById(R.id.DadosDeLongitude);
     }
 }
