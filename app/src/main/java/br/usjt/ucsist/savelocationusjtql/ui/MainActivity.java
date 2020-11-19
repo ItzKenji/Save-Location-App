@@ -1,5 +1,6 @@
 package br.usjt.ucsist.savelocationusjtql.ui;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,12 +9,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -22,19 +27,33 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import 	android.util.Log;
 
+import br.usjt.ucsist.savelocationusjtql.model.LocalAdapter;
 import br.usjt.ucsist.savelocationusjtql.R;
 import br.usjt.ucsist.savelocationusjtql.model.Local;
-import br.usjt.ucsist.savelocationusjtql.model.LocalAdapter;
+import io.perfmark.Tag;
 
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String CEP_KEY = "cep";
+    public static final String RUA_KEY = "rua";
+    public static final String NUMERO_KEY = "numero";
+    public static final String BAIRRO_KEY = "bairro";
+    public static final String CIDADE_KEY = "cidade";
+    public static final String ESTADO_KEY = "estado";
+    private static final String TAG = "MyActivity";
     private RecyclerView cardsLocaisRecyclerView;
     private LocalAdapter adapter;
     private List<Local> locais;
     private CollectionReference locaisReference;
+
+    private DocumentReference mDocRef = FirebaseFirestore.getInstance().collection("sampleData").document("Locais");
+
 
     private Button voltarHome;
     private EditText editTextCEP;
@@ -71,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
         adicionarLocais.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-
                 Intent intent = new Intent(MainActivity.this, CadastroDeLocaisActivity.class);
                 startActivity(intent);
             }
@@ -80,30 +98,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setupFirebase (){
-        locaisReference = FirebaseFirestore.getInstance().collection("mensagens");
-        getRemoteMsgs();
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        setupFirebase();
-    }
-
-    private void getRemoteMsgs (){
-        locaisReference.addSnapshotListener(new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
-                locais.clear();
-                for (DocumentSnapshot doc : queryDocumentSnapshots.getDocuments()){
-                    Local incomingMsg = doc.toObject(Local.class);
-                    locais.add(incomingMsg);
-                }
-                adapter.notifyDataSetChanged();
-            }
-        });
-    }
 
 
 }

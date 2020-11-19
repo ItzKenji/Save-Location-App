@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import br.usjt.ucsist.savelocationusjtql.R;
 
-class LocalViewHolder extends RecyclerView.ViewHolder {
+public class LocalViewHolder extends RecyclerView.ViewHolder {
     TextView DataCadastro;
     TextView TextViewCEP;
     TextView TextViewRua;
