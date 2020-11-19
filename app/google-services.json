@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "903931820492",
+    "firebase_url": "https://save-location-usjt-ql-cf2a7.firebaseio.com",
+    "project_id": "save-location-usjt-ql-cf2a7",
+    "storage_bucket": "save-location-usjt-ql-cf2a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903931820492:android:d619d5588b6abbdcd9c569",
+        "android_client_info": {
+          "package_name": "br.usjt.ucsist.savelocationusjtql"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "903931820492-4hkkfp8fc36rnrh08857l5cg34fuhc10.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5m8kWHKr3tb9IFHzI_fK63IrPfVTnJIM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "903931820492-4hkkfp8fc36rnrh08857l5cg34fuhc10.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
