@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -54,13 +55,6 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
     private TextView DadosDeLongitude;
     private TextView DadosDeLatitude;
     private Button adicionarLocais;
-
-    public static final String CEP_KEY = "cep";
-    public static final String RUA_KEY = "rua";
-    public static final String NUMERO_KEY = "numero";
-    public static final String BAIRRO_KEY = "bairro";
-    public static final String CIDADE_KEY = "cidade";
-    public static final String ESTADO_KEY = "estado";
     private static final String TAG = "MyActivity";
 
     private DocumentReference mDocRef = FirebaseFirestore.getInstance().collection("sampleData").document("Locais");
@@ -91,13 +85,13 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
             return;
         }
         Map<String, Object> dataToSave = new HashMap<String, Object>();
-        dataToSave.put(CEP_KEY, cepText);
-        dataToSave.put(RUA_KEY, ruaText);
-        dataToSave.put(NUMERO_KEY, numeroText);
-        dataToSave.put(BAIRRO_KEY, bairroText);
-        dataToSave.put(CIDADE_KEY, cidadeText);
-        dataToSave.put(ESTADO_KEY, estadoText);
-        mDocRef.collection("users")
+        dataToSave.put("cep", cepText);
+        dataToSave.put("rua", ruaText);
+        dataToSave.put("numero", numeroText);
+        dataToSave.put("bairro", bairroText);
+        dataToSave.put("cidade", cidadeText);
+        dataToSave.put("estado", estadoText);
+        mDocRef.collection("Sla")
                 .add(dataToSave)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
@@ -111,6 +105,8 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
                         Log.w(TAG, "Error adding document", e);
                     }
                 });
+        Intent intent = new Intent(CadastroDeLocaisActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 
 
