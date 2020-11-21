@@ -19,7 +19,6 @@
             android:layout_height="match_parent"
             android:background="@drawable/bg_layer_gradient"/>
 
-
     <TextView
         android:id="@+id/textViewTitulo"
         android:layout_width="match_parent"
@@ -38,6 +37,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
+
+
     <EditText
         android:id="@+id/editTextCEP"
         android:layout_width="match_parent"
@@ -47,6 +48,7 @@
         android:layout_marginRight="36dp"
         android:background="@drawable/bg_acesso"
         android:hint="@string/CEP"
+        android:inputType="number"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textColorHint="@color/Marfim"
@@ -84,6 +86,7 @@
         android:layout_marginRight="36dp"
         android:background="@drawable/bg_acesso"
         android:hint="@string/numero"
+        android:inputType="number"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textColorHint="@color/Marfim"

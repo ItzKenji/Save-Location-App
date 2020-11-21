@@ -32,7 +32,7 @@
                 android:layout_centerVertical="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:src="@drawable/ic_photo"/>
+                android:src="@drawable/ic_photo" />
 
             <LinearLayout
                 android:id="@+id/LLDescricao"
