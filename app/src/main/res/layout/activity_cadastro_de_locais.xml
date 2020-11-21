@@ -14,10 +14,11 @@
         android:layout_height="match_parent"
         android:background="@drawable/fundoo">
 
-        <View
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/bg_layer_gradient"/>
+            android:orientation="vertical"
+            android:background="@drawable/bg_layer_gradient">
 
     <TextView
         android:id="@+id/textViewTitulo"
@@ -36,15 +37,36 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/fotoLocal"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_photo"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTitulo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
 
-
+        <TextView
+            android:id="@+id/linkFotoLocal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/Marfim"
+            android:textStyle="bold"
+            android:text="Clique aqui para alterar a foto"
+            android:layout_gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/fotoLocal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
 
     <EditText
         android:id="@+id/editTextCEP"
         android:layout_width="match_parent"
         android:layout_height="34dp"
         android:layout_marginLeft="36dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="32dp"
         android:layout_marginRight="36dp"
         android:background="@drawable/bg_acesso"
         android:hint="@string/CEP"
@@ -56,7 +78,7 @@
         android:textStyle="italic"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitulo" />
+        app:layout_constraintTop_toBottomOf="@+id/linkFotoLocal" />
 
 
     <EditText
@@ -199,6 +221,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonConfirmar"/>
 
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
