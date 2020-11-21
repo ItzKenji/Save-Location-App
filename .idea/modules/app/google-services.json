@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1008491196448",
+    "firebase_url": "https://save-location-usjt-ql-26c9d.firebaseio.com",
+    "project_id": "save-location-usjt-ql-26c9d",
+    "storage_bucket": "save-location-usjt-ql-26c9d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1008491196448:android:7686f3b14fbf83a64a0c45",
+        "android_client_info": {
+          "package_name": "br.usjt.ucsist.savelocationusjtql"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1008491196448-iu2uuoae7mqs9au6to4jrk6hpnioprvu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.usjt.ucsist.savelocationusjtql",
+            "certificate_hash": "f5f2d2f9fd78811017baf95c09a6fb943e8d54c5"
+          }
+        },
+        {
+          "client_id": "1008491196448-mpna9c1stl2ef066ng396pg6k4otcpbn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLN8ZzBrFz-SOx4hx9n65N1YltL5BMkmE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1008491196448-mpna9c1stl2ef066ng396pg6k4otcpbn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
