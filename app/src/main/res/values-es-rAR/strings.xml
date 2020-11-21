@@ -5,6 +5,7 @@
     <string name="BAdicionarLocais">Agregar Lugares</string>
 
     <string name="TCadastroDeLocais">Registro de Lugares</string>
+    <string name="LinkDaFoto">Haga clic aquí para agregar una foto del lugar</string>
     <string name="CEP">Ingresa tu Código Postal</string>
     <string name="rua">Introduzca la Calle</string>
     <string name="numero">Introduzca el Número</string>

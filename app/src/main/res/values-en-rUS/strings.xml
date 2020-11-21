@@ -5,6 +5,7 @@
     <string name="BAdicionarLocais">Add Places</string>
 
     <string name="TCadastroDeLocais">Registration of Places</string>
+    <string name="LinkDaFoto">Click here to add a photo of the place</string>
     <string name="CEP">Enter Zip Code</string>
     <string name="rua">Enter Street</string>
     <string name="numero">Enter the Nº</string>

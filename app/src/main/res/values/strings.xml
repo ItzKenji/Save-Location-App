@@ -5,6 +5,7 @@
     <string name="BAdicionarLocais">Adicionar Locais</string>
 
     <string name="TCadastroDeLocais">Cadastro de Locais</string>
+    <string name="LinkDaFoto">Clique aqui para adicionar uma foto do local</string>
     <string name="CEP">Insira o CEP</string>
     <string name="rua">Insira a Rua</string>
     <string name="numero">Insira o Nº</string>
