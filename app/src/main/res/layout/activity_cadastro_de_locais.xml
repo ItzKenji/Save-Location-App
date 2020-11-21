@@ -80,43 +80,47 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linkFotoLocal" />
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/editTextRua"
-        android:layout_width="match_parent"
-        android:layout_height="34dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginRight="36dp"
-        android:background="@drawable/bg_acesso"
-        android:hint="@string/rua"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textColorHint="@color/Marfim"
-        android:textSize="18dp"
-        android:textStyle="italic"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCEP" />
+                <EditText
+                    android:id="@+id/editTextRua"
+                    android:layout_width="250dp"
+                    android:layout_height="34dp"
+                    android:layout_marginLeft="36dp"
+                    android:background="@drawable/bg_acesso"
+                    android:hint="@string/rua"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/Marfim"
+                    android:textSize="18dp"
+                    android:textStyle="italic"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextCEP" />
 
-    <EditText
-        android:id="@+id/editTextNumero"
-        android:layout_width="match_parent"
-        android:layout_height="34dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginRight="36dp"
-        android:background="@drawable/bg_acesso"
-        android:hint="@string/numero"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textColorHint="@color/Marfim"
-        android:textSize="18dp"
-        android:textStyle="italic"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextRua" />
+                <EditText
+                    android:id="@+id/editTextNumero"
+                    android:layout_width="109dp"
+                    android:layout_height="34dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="36dp"
+                    android:background="@drawable/bg_acesso"
+                    android:hint="@string/numero"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/Marfim"
+                    android:textSize="18dp"
+                    android:textStyle="italic"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextRua" />
+
+            </LinearLayout>
 
     <EditText
         android:id="@+id/editTextBairro"
