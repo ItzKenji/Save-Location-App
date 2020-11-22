@@ -16,6 +16,7 @@ public class LocalViewHolder extends RecyclerView.ViewHolder {
     TextView TextViewEstado;
     TextView TextViewLatitude;
     TextView TextViewLongitude;
+    
 
     LocalViewHolder(View raiz){
         super(raiz);
@@ -28,4 +29,5 @@ public class LocalViewHolder extends RecyclerView.ViewHolder {
         this.TextViewLatitude = raiz.findViewById(R.id.DadosDeLatitude);
         this.TextViewLongitude = raiz.findViewById(R.id.DadosDeLongitude);
     }
+
 }
