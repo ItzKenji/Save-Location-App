@@ -7,11 +7,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,9 +55,13 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
     private EditText editTextBairro;
     private EditText editTextCidade;
     private EditText editTextEstado;
+    private ImageView fotoLocal;
+    private TextView linkFotoLocal;
+
     private TextView DadosDeLongitude;
     private TextView DadosDeLatitude;
     private Button adicionarLocais;
+
     private static final String TAG = "MyActivity";
 
     private DocumentReference mDocRef = FirebaseFirestore.getInstance().collection("sampleData").document("Locais");
@@ -64,22 +71,59 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_de_locais);
 
+        editTextCEP = (EditText) findViewById(R.id.editTextCEP);
+        editTextRua = (EditText) findViewById(R.id.editTextRua);
+        editTextNumero = (EditText) findViewById(R.id.editTextNumero);
+        editTextBairro = (EditText) findViewById(R.id.editTextBairro);
+        editTextCidade = (EditText) findViewById(R.id.editTextCidade);
+        editTextEstado = (EditText) findViewById(R.id.editTextEstado);
+        fotoLocal = (ImageView) findViewById(R.id.fotoLocal);
+        linkFotoLocal = (TextView) findViewById(R.id.linkFotoLocal);
+
+        linkFotoLocal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tirarFoto();
+            }
+        });
+
+    }
+
+    private void tirarFoto() {
+        dispatchTakePictureIntent();
+    }
+
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            fotoLocal.setImageBitmap(imageBitmap);
+            //contatoCorrente.setImagem(ImageUtil.encode(imageBitmap));
+            //Log.d("IMAGEMBITMAPENCODED-->",contatoCorrente.getImagem());
+        }
+
     }
 
     public void completarCadastro( View view) {
-        EditText cepView = (EditText) findViewById(R.id.editTextCEP);
-        EditText ruaView = (EditText) findViewById(R.id.editTextRua);
-        EditText numeroView = (EditText) findViewById(R.id.editTextNumero);
-        EditText bairroView = (EditText) findViewById(R.id.editTextBairro);
-        EditText cidadeView = (EditText) findViewById(R.id.editTextCidade);
-        EditText estadoView = (EditText) findViewById(R.id.editTextEstado);
 
-        String cepText = cepView.getText().toString();
-        String ruaText = ruaView.getText().toString();
-        String numeroText = numeroView.getText().toString();
-        String bairroText = bairroView.getText().toString();
-        String cidadeText = cidadeView.getText().toString();
-        String estadoText = estadoView.getText().toString();
+        String cepText = editTextCEP.getText().toString();
+        String ruaText = editTextRua.getText().toString();
+        String numeroText = editTextNumero.getText().toString();
+        String bairroText = editTextBairro.getText().toString();
+        String cidadeText = editTextCidade.getText().toString();
+        String estadoText = editTextEstado.getText().toString();
 
         if (cepText.isEmpty() || ruaText.isEmpty() || numeroText.isEmpty() || bairroText.isEmpty() || cidadeText.isEmpty() || estadoText.isEmpty()) {
             return;
