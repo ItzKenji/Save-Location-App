@@ -36,30 +36,23 @@ public class LocalAdapter extends RecyclerView.Adapter<LocalViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull LocalViewHolder holder, int position) {
         Local l = locais.get(position);
-        holder.DataCadastro.setText(context.getString(
-                R.string.CdataDados, DateHelper.format(l.getDataCadastro())
-        ));
-        holder.DadosDeLongitude.setText(context.getString(
-                R.string.ClongitudeDados, l.getDadosLongitude()
-        ));
-        holder.DadosDeLatitude.setText(context.getString(
-                R.string.ClatitudeDados, l.getDadosLatitude()
-        ));
-        holder.TextViewEstado.setText(context.getString(
-                R.string.CEstado, l.getEstado()
-        ));
-        holder.TextViewCidade.setText(context.getString(
-                R.string.CCidade, l.getCidade()
-        ));
-        holder.TextViewBairro.setText(context.getString(
-                R.string.CBairro, l.getBairro()
-        ));
-        holder.TextViewRua.setText(context.getString(
-                R.string.CRua, l.getRua()
-        ));
-        holder.TextViewCEP.setText(context.getString(
-                R.string.CCEP, l.getCep()
-        ));
+        holder.DataCadastro.setText(context.getString(R.string.CdataDados, DateHelper.format(l.getDataCadastro())));
+        holder.TextViewCEP.setText(context.getString(R.string.CCEP, l.getCep()));
+        holder.TextViewRua.setText(context.getString(R.string.CRua, l.getRua()));
+        holder.TextViewBairro.setText(context.getString(R.string.CBairro, l.getBairro()));
+        holder.TextViewCidade.setText(context.getString(R.string.CCidade, l.getCidade()));
+        holder.TextViewEstado.setText(context.getString(R.string.CEstado, l.getEstado()));
+        holder.DadosDeLatitude.setText(context.getString(R.string.ClatitudeDados, l.getDadosLatitude()));
+        holder.DadosDeLongitude.setText(context.getString(R.string.ClongitudeDados, l.getDadosLongitude()));
+
+//        holder.DadosDeLongitude.setText(l.getDadosLongitude());
+//        holder.DadosDeLatitude.setText(l.getDadosLatitude());
+//        holder.TextViewEstado.setText(l.getEstado());
+//        holder.TextViewCidade.setText(l.getCidade());
+//        holder.TextViewBairro.setText(l.getBairro());
+//        holder.TextViewRua.setText(l.getRua());
+//        holder.TextViewCEP.setText(l.getCep());
+
     }
 
     @Override

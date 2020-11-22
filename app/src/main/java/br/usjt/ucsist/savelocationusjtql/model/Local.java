@@ -3,7 +3,7 @@ package br.usjt.ucsist.savelocationusjtql.model;
 
 import java.util.Date;
 
-public class Local{
+public class Local {
 
     private String dadosLongitude;
     private String dadosLatitude;
