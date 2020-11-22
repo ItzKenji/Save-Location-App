@@ -16,7 +16,7 @@ public class LocalViewHolder extends RecyclerView.ViewHolder {
     TextView TextViewEstado;
     TextView TextViewLatitude;
     TextView TextViewLongitude;
-    
+
 
     LocalViewHolder(View raiz){
         super(raiz);

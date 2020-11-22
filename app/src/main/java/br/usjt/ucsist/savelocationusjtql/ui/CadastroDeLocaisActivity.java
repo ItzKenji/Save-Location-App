@@ -229,6 +229,13 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void voltarHome (View view){
+
+        Intent intent = new Intent(CadastroDeLocaisActivity.this, MainActivity.class);
+        startActivity(intent);
+
+    }
+
 //    public boolean validarCampos(){
 //        boolean valido = true;
 //        if(editTextCEP.getText().toString().trim().length() == 0){
