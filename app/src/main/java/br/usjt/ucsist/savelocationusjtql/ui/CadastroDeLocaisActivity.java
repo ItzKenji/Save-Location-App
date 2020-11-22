@@ -3,11 +3,18 @@ package br.usjt.ucsist.savelocationusjtql.ui;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -58,13 +65,51 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
     private ImageView fotoLocal;
     private TextView linkFotoLocal;
 
-    private TextView DadosDeLongitude;
-    private TextView DadosDeLatitude;
+    private TextView textViewLongitude;
+    private TextView textViewLatitude;
     private Button adicionarLocais;
 
     private static final String TAG = "MyActivity";
 
     private DocumentReference mDocRef = FirebaseFirestore.getInstance().collection("sampleData").document("Locais");
+
+    private LocationManager locationManager;
+    private LocationListener locationListener;
+    private static final int GPS_REQUEST_PERMISSION_CODE = 1001;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED){
+            locationManager.requestLocationUpdates(
+                    LocationManager.GPS_PROVIDER, 5000, 10, locationListener
+            );
+        }
+        else {
+            ActivityCompat.requestPermissions(
+                    this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION},
+                    GPS_REQUEST_PERMISSION_CODE);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == GPS_REQUEST_PERMISSION_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                if (ActivityCompat.checkSelfPermission(
+                        this, Manifest.permission.ACCESS_FINE_LOCATION) ==
+                        PackageManager.PERMISSION_GRANTED) {
+                }
+                locationManager.requestLocationUpdates(
+                        LocationManager.GPS_PROVIDER, 5000, 10, locationListener
+                );
+            } else {
+                Toast.makeText(this, getString(R.string.gps_permission_denied),
+                        Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +122,8 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
         editTextBairro = (EditText) findViewById(R.id.editTextBairro);
         editTextCidade = (EditText) findViewById(R.id.editTextCidade);
         editTextEstado = (EditText) findViewById(R.id.editTextEstado);
+        textViewLatitude = (TextView) findViewById(R.id.textViewLatitude);
+        textViewLongitude = (TextView) findViewById(R.id.textViewLongitude);
         fotoLocal = (ImageView) findViewById(R.id.fotoLocal);
         linkFotoLocal = (TextView) findViewById(R.id.linkFotoLocal);
 
@@ -87,6 +134,31 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
             }
         });
 
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        locationListener = new LocationListener() {
+
+            @Override
+            public void onLocationChanged(Location location) {
+                double latitude = location.getLatitude();
+                double longitude = location.getLongitude();
+                textViewLatitude.setText(String.format("%f", latitude));
+                textViewLongitude.setText(String.format("%f", longitude));
+            }
+
+            @Override
+            public void onStatusChanged(String provider, int status, Bundle
+                    extras) {
+            }
+
+            @Override
+            public void onProviderEnabled(String provider) {
+            }
+
+            @Override
+            public void onProviderDisabled(String provider) {
+            }
+        };
     }
 
     private void tirarFoto() {
@@ -124,6 +196,8 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
         String bairroText = editTextBairro.getText().toString();
         String cidadeText = editTextCidade.getText().toString();
         String estadoText = editTextEstado.getText().toString();
+        String latitudeText = textViewLatitude.getText().toString();
+        String longitudeText = textViewLongitude.getText().toString();
 
         if (cepText.isEmpty() || ruaText.isEmpty() || numeroText.isEmpty() || bairroText.isEmpty() || cidadeText.isEmpty() || estadoText.isEmpty()) {
             return;
@@ -135,6 +209,8 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
         dataToSave.put("bairro", bairroText);
         dataToSave.put("cidade", cidadeText);
         dataToSave.put("estado", estadoText);
+        dataToSave.put("dadosLatitude", latitudeText);
+        dataToSave.put("dadosLongitude", longitudeText);
         mDocRef.collection("Sla")
                 .add(dataToSave)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
@@ -152,8 +228,6 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
         Intent intent = new Intent(CadastroDeLocaisActivity.this, MainActivity.class);
         startActivity(intent);
     }
-
-
 
 //    public boolean validarCampos(){
 //        boolean valido = true;
@@ -183,5 +257,11 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
 //        }
 //        return  valido;
 //    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        locationManager.removeUpdates(locationListener);
+    }
 
 }

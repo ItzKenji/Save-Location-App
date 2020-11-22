@@ -27,7 +27,7 @@ public class Local {
         this.dataCadastro = dataCadastro;
     }
 
-    public Local(String cep, String rua, String numero, String bairro, String cidade, String estado, Date date) {
+    public Local() {
     }
 
     public String getDadosLongitude() {

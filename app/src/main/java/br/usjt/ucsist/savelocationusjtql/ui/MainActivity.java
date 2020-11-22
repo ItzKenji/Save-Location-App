@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
 
     private DocumentReference mDocRef = FirebaseFirestore.getInstance().collection("sampleData").document("Locais");
 
-
     private Button voltarHome;
     private EditText editTextCEP;
     private EditText editTextRua;
@@ -62,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextBairro;
     private EditText editTextCidade;
     private EditText editTextEstado;
-    private TextView DadosDeLongitude;
-    private TextView DadosDeLatitude;
+    private TextView textViewLongitude;
+    private TextView textViewLatitude;
     private Button adicionarLocais;
 
     @Override
@@ -83,8 +82,8 @@ public class MainActivity extends AppCompatActivity {
         editTextCidade = findViewById(R.id.editTextCidade);
         editTextCEP = findViewById(R.id.editTextCEP);
         editTextBairro = findViewById(R.id.editTextBairro);
-        DadosDeLatitude = findViewById(R.id.DadosDeLatitude);
-        DadosDeLongitude = findViewById(R.id.DadosDeLongitude);
+        textViewLatitude = findViewById(R.id.DadosDeLatitude);
+        textViewLongitude = findViewById(R.id.DadosDeLongitude);
 
         adicionarLocais = (Button) findViewById(R.id.buttonAdicionarLocais);
         adicionarLocais.setOnClickListener(new View.OnClickListener() {
@@ -97,7 +96,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-
 
 }

@@ -42,11 +42,11 @@ public class LocalAdapter extends RecyclerView.Adapter<LocalViewHolder> {
         holder.TextViewBairro.setText(context.getString(R.string.CBairro, l.getBairro()));
         holder.TextViewCidade.setText(context.getString(R.string.CCidade, l.getCidade()));
         holder.TextViewEstado.setText(context.getString(R.string.CEstado, l.getEstado()));
-        holder.DadosDeLatitude.setText(context.getString(R.string.ClatitudeDados, l.getDadosLatitude()));
-        holder.DadosDeLongitude.setText(context.getString(R.string.ClongitudeDados, l.getDadosLongitude()));
+        holder.TextViewLatitude.setText(context.getString(R.string.ClatitudeDados, l.getDadosLatitude()));
+        holder.TextViewLongitude.setText(context.getString(R.string.ClongitudeDados, l.getDadosLongitude()));
 
-//        holder.DadosDeLongitude.setText(l.getDadosLongitude());
-//        holder.DadosDeLatitude.setText(l.getDadosLatitude());
+//        holder.TextViewLongitude.setText(l.getDadosLongitude());
+//        holder.TextViewLatitude.setText(l.getDadosLatitude());
 //        holder.TextViewEstado.setText(l.getEstado());
 //        holder.TextViewCidade.setText(l.getCidade());
 //        holder.TextViewBairro.setText(l.getBairro());

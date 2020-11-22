@@ -2,6 +2,8 @@
 
     <string name="app_name">Save Location USJT QL</string>
 
+    <string name="gps_permission_denied">Permissão de acesso ao GPS não concedida.</string>
+
     <string name="BAdicionarLocais">Adicionar Locais</string>
 
     <string name="TCadastroDeLocais">Cadastro de Locais</string>
@@ -23,9 +25,9 @@
     <string name="CBairro">Bairro: %s</string>
     <string name="CCidade">Cidade: %s</string>
     <string name="CEstado">Estado: %s</string>
-    <string name="CLatitude">Latitude:</string>
+    <string name="CLatitude">Latitude</string>
     <string name="ClatitudeDados"> %s</string>
-    <string name="Clongitude">Longitude:</string>
+    <string name="Clongitude">Longitude</string>
     <string name="ClongitudeDados"> %s</string>
 
 
