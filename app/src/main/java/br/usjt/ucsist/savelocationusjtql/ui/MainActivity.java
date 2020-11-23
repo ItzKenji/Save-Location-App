@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
     public static final String ESTADO_KEY = "estado";
     private static final String TAG = "MyActivity";
     private RecyclerView cardsLocaisRecyclerView;
-    private LocalAdapter adapter;
-    private List<Local> locais;
+    public static LocalAdapter adapter;
+    public static List<Local> locais;
     private CollectionReference locaisReference;
 
     private DocumentReference mDocRef = FirebaseFirestore.getInstance().collection("sampleData").document("Locais");
@@ -94,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
+
 
     }
 

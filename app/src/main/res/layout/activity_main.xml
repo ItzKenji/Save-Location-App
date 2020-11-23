@@ -85,7 +85,6 @@
             android:textColor="@color/Marfim"
             android:textSize="22dp"
             android:textStyle="bold"
-            android:onClick="adicionarLocais"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />

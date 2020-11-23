@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -52,7 +53,7 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
 
     private RecyclerView cardsLocaisRecyclerView;
     private LocalAdapter adapter;
-    private List<Local> locais;
+    private List<Local> listaLocal;
     private CollectionReference locaisReference;
 
     private Button voltarHome;
@@ -174,6 +175,12 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
         }
     }
 
+//    public CadastroDeLocaisActivity(LocalAdapter adapter, List<Local> listaLocal ){
+//
+//        this.adapter = adapter;
+//        this.listaLocal = listaLocal;
+//
+//    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -203,6 +210,7 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
                 return;
             }
             Map<String, Object> dataToSave = new HashMap<String, Object>();
+
             dataToSave.put("titulo", tituloText);
             dataToSave.put("rua", ruaText);
             dataToSave.put("numero", numeroText);
@@ -225,8 +233,13 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
                             Log.w(TAG, "Error adding document", e);
                         }
                     });
-            Intent intent = new Intent(CadastroDeLocaisActivity.this, MainActivity.class);
-            startActivity(intent);
+            Local l = new Local ( longitudeText, latitudeText, tituloText, ruaText, numeroText, bairroText, cidadeText, estadoText);
+            MainActivity.locais.add(l);
+            MainActivity.adapter.notifyDataSetChanged();
+            finish();
+
+//            Intent intent = new Intent(CadastroDeLocaisActivity.this, MainActivity.class);
+//            startActivity(intent);
         }
     }
 
