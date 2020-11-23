@@ -37,7 +37,7 @@ public class LocalAdapter extends RecyclerView.Adapter<LocalViewHolder> {
     public void onBindViewHolder(@NonNull LocalViewHolder holder, int position) {
         Local l = locais.get(position);
         holder.DataCadastro.setText(context.getString(R.string.CdataDados, DateHelper.format(l.getDataCadastro())));
-        holder.TextViewCEP.setText(context.getString(R.string.CCEP, l.getCep()));
+        holder.TextViewTitulo.setText(context.getString(R.string.CTitulo, l.getTitulo()));
         holder.TextViewRua.setText(context.getString(R.string.CRua, l.getRua()));
         holder.TextViewBairro.setText(context.getString(R.string.CBairro, l.getBairro()));
         holder.TextViewCidade.setText(context.getString(R.string.CCidade, l.getCidade()));

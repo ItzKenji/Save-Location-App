@@ -1,13 +1,12 @@
 package br.usjt.ucsist.savelocationusjtql.model;
 
-
 import java.util.Date;
 
 public class Local {
 
     private String dadosLongitude;
     private String dadosLatitude;
-    private String cep;
+    private String titulo;
     private String rua;
     private String numero;
     private String bairro;
@@ -15,10 +14,10 @@ public class Local {
     private String estado;
     private Date dataCadastro;
 
-    public Local(String dadosLongitude, String dadosLatitude, String cep, String rua, String numero, String bairro, String cidade, String estado, Date dataCadastro) {
+    public Local(String dadosLongitude, String dadosLatitude, String titulo, String rua, String numero, String bairro, String cidade, String estado, Date dataCadastro) {
         this.dadosLongitude = dadosLongitude;
         this.dadosLatitude = dadosLatitude;
-        this.cep = cep;
+        this.titulo = titulo;
         this.rua = rua;
         this.numero = numero;
         this.bairro = bairro;
@@ -54,12 +53,12 @@ public class Local {
         this.dataCadastro = dataCadastro;
     }
 
-    public String getCep() {
-        return cep;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setCep(String cep) {
-        this.cep = cep;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public String getRua() {

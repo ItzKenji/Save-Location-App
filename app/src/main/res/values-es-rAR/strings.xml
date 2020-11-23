@@ -8,7 +8,7 @@
 
     <string name="TCadastroDeLocais">Registro de Lugares</string>
     <string name="LinkDaFoto">Haga clic aquí para agregar una foto del lugar</string>
-    <string name="CEP">Ingresa tu Código Postal</string>
+    <string name="titulo">Ingrese el título</string>
     <string name="rua">Introduzca la Calle</string>
     <string name="numero">Introduzca el Número</string>
     <string name="bairro">Introduzca el Barrio</string>
@@ -20,7 +20,7 @@
 
     <string name="CDataDeCadastro">Fecha de Registro:</string>
     <string name="CdataDados">%s</string>
-    <string name="CCEP">Código Postal: %s</string>
+    <string name="CTitulo">Título: %s</string>
     <string name="CRua">Calle: %s</string>
     <string name="CBairro">Barrio: %s</string>
     <string name="CCidade">Ciudad: %s</string>

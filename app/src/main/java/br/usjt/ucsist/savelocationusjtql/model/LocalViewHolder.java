@@ -9,7 +9,7 @@ import br.usjt.ucsist.savelocationusjtql.R;
 
 public class LocalViewHolder extends RecyclerView.ViewHolder {
     TextView DataCadastro;
-    TextView TextViewCEP;
+    TextView TextViewTitulo;
     TextView TextViewRua;
     TextView TextViewBairro;
     TextView TextViewCidade;
@@ -21,7 +21,7 @@ public class LocalViewHolder extends RecyclerView.ViewHolder {
     LocalViewHolder(View raiz){
         super(raiz);
         this.DataCadastro = raiz.findViewById(R.id.DataCadastro);
-        this.TextViewCEP = raiz.findViewById(R.id.TextViewCEP);
+        this.TextViewTitulo = raiz.findViewById(R.id.TextViewTitulo);
         this.TextViewRua = raiz.findViewById(R.id.TextViewRua);
         this.TextViewBairro = raiz.findViewById(R.id.TextViewBairro);
         this.TextViewCidade = raiz.findViewById(R.id.TextViewCidade);

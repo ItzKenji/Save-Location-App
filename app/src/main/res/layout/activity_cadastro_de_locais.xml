@@ -20,46 +20,46 @@
             android:orientation="vertical"
             android:background="@drawable/bg_layer_gradient">
 
-    <TextView
-        android:id="@+id/textViewTitulo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="11pt"
-        android:layout_marginTop="14pt"
-        android:layout_marginRight="11pt"
-        android:background="@drawable/bg_titulo_cadastro"
-        android:text="@string/TCadastroDeLocais"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="14pt"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/textViewTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="11pt"
+                android:layout_marginTop="14pt"
+                android:layout_marginRight="11pt"
+                android:background="@drawable/bg_titulo_cadastro"
+                android:text="@string/TCadastroDeLocais"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14pt"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/fotoLocal"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginTop="16dp"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_photo"
-            app:layout_constraintTop_toBottomOf="@+id/textViewTitulo"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+            <ImageView
+                android:id="@+id/fotoLocal"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_photo"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTitulo"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
 
-        <TextView
-            android:id="@+id/linkFotoLocal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:textColor="@color/Marfim"
-            android:textStyle="bold"
-            android:text="@string/LinkDaFoto"
-            android:layout_gravity="center"
-            app:layout_constraintTop_toBottomOf="@+id/fotoLocal"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+            <TextView
+                android:id="@+id/linkFotoLocal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/Marfim"
+                android:textStyle="bold"
+                android:text="@string/LinkDaFoto"
+                android:layout_gravity="center"
+                app:layout_constraintTop_toBottomOf="@+id/fotoLocal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -98,24 +98,23 @@
 
             </LinearLayout>
 
-    <EditText
-        android:id="@+id/editTextCEP"
-        android:layout_width="match_parent"
-        android:layout_height="34dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="36dp"
-        android:background="@drawable/bg_acesso"
-        android:hint="@string/CEP"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textColorHint="@color/Marfim"
-        android:textSize="18dp"
-        android:textStyle="italic"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linkFotoLocal" />
+            <EditText
+                android:id="@+id/editTextTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginLeft="36dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="36dp"
+                android:background="@drawable/bg_acesso"
+                android:hint="@string/titulo"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textColorHint="@color/Marfim"
+                android:textSize="18dp"
+                android:textStyle="italic"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linkFotoLocal" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -161,108 +160,108 @@
 
             </LinearLayout>
 
-    <EditText
-        android:id="@+id/editTextBairro"
-        android:layout_width="match_parent"
-        android:layout_height="34dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginRight="36dp"
-        android:background="@drawable/bg_acesso"
-        android:hint="@string/bairro"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textColorHint="@color/Marfim"
-        android:textSize="18dp"
-        android:textStyle="italic"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumero" />
+            <EditText
+                android:id="@+id/editTextBairro"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginLeft="36dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="36dp"
+                android:background="@drawable/bg_acesso"
+                android:hint="@string/bairro"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textColorHint="@color/Marfim"
+                android:textSize="18dp"
+                android:textStyle="italic"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextNumero" />
 
-    <EditText
-        android:id="@+id/editTextCidade"
-        android:layout_width="match_parent"
-        android:layout_height="34dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginRight="36dp"
-        android:background="@drawable/bg_acesso"
-        android:hint="@string/cidade"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textColorHint="@color/Marfim"
-        android:textSize="18dp"
-        android:textStyle="italic"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextBairro" />
+            <EditText
+                android:id="@+id/editTextCidade"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginLeft="36dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="36dp"
+                android:background="@drawable/bg_acesso"
+                android:hint="@string/cidade"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textColorHint="@color/Marfim"
+                android:textSize="18dp"
+                android:textStyle="italic"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextBairro" />
 
-    <EditText
-        android:id="@+id/editTextEstado"
-        android:layout_width="match_parent"
-        android:layout_height="34dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginRight="36dp"
-        android:background="@drawable/bg_acesso"
-        android:hint="@string/estado"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textColorHint="@color/Marfim"
-        android:textSize="18dp"
-        android:textStyle="italic"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCidade" />
+            <EditText
+                android:id="@+id/editTextEstado"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginLeft="36dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="36dp"
+                android:background="@drawable/bg_acesso"
+                android:hint="@string/estado"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textColorHint="@color/Marfim"
+                android:textSize="18dp"
+                android:textStyle="italic"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextCidade" />
 
-    <TextView
-        android:id="@+id/textViewAviso"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/avisoCadastro"
-        android:textAlignment="center"
-        android:textColor="#CED6CDCD"
-        android:textSize="12dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEstado" />
+            <TextView
+                android:id="@+id/textViewAviso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/avisoCadastro"
+                android:textAlignment="center"
+                android:textColor="#CED6CDCD"
+                android:textSize="12dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEstado" />
 
 
-    <Button
-        android:id="@+id/buttonConfirmar"
-        android:layout_width="match_parent"
-        android:layout_height="43dp"
-        android:layout_marginLeft="63dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="63dp"
-        android:background="@drawable/bg_button"
-        android:text="@string/BConfirmar"
-        android:textColor="@color/Marfim"
-        android:textSize="22dp"
-        android:textStyle="bold"
-        android:onClick="completarCadastro"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAviso" />
+            <Button
+                android:id="@+id/buttonConfirmar"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_marginLeft="63dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="63dp"
+                android:background="@drawable/bg_button"
+                android:text="@string/BConfirmar"
+                android:textColor="@color/Marfim"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:onClick="completarCadastro"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewAviso" />
 
-    <Button
-        android:id="@+id/buttonVoltar"
-        android:layout_width="match_parent"
-        android:layout_height="43dp"
-        android:layout_marginLeft="63dp"
-        android:layout_marginRight="63dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="23dp"
-        android:background="@drawable/bg_button"
-        android:text="@string/BVoltar"
-        android:textColor="@color/Marfim"
-        android:textSize="22dp"
-        android:textStyle="bold"
-        android:onClick="voltarHome"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonConfirmar"/>
+            <Button
+                android:id="@+id/buttonVoltar"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_marginLeft="63dp"
+                android:layout_marginRight="63dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="23dp"
+                android:background="@drawable/bg_button"
+                android:text="@string/BVoltar"
+                android:textColor="@color/Marfim"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:onClick="voltarHome"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonConfirmar"/>
 
         </LinearLayout>
 

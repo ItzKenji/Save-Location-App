@@ -8,7 +8,7 @@
 
     <string name="TCadastroDeLocais">Registration of Places</string>
     <string name="LinkDaFoto">Click here to add a photo of the place</string>
-    <string name="CEP">Enter Zip Code</string>
+    <string name="titulo">Enter Title</string>
     <string name="rua">Enter Street</string>
     <string name="numero">Enter the Nº</string>
     <string name="bairro">Enter the Neighborhood</string>
@@ -20,7 +20,7 @@
 
     <string name="CDataDeCadastro">Registration Date:</string>
     <string name="CdataDados">%s</string>
-    <string name="CCEP">Zip Code: %s</string>
+    <string name="CTitulo">Title: %s</string>
     <string name="CRua">Street: %s</string>
     <string name="CBairro">Neighborhood: %s</string>
     <string name="CCidade">City: %s</string>
@@ -29,7 +29,6 @@
     <string name="ClatitudeDados"> %s</string>
     <string name="Clongitude">Longitude</string>
     <string name="ClongitudeDados"> %s</string>
-
 
 
 </resources>

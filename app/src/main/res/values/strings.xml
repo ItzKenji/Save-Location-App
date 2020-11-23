@@ -8,7 +8,7 @@
 
     <string name="TCadastroDeLocais">Cadastro de Locais</string>
     <string name="LinkDaFoto">Clique aqui para adicionar uma foto do local</string>
-    <string name="CEP">Insira o CEP</string>
+    <string name="titulo">Insira o Título</string>
     <string name="rua">Insira a Rua</string>
     <string name="numero">Insira o Nº</string>
     <string name="bairro">Insira o Bairro</string>
@@ -20,7 +20,7 @@
 
     <string name="CDataDeCadastro">Data de Cadastro:</string>
     <string name="CdataDados">%s</string>
-    <string name="CCEP">CEP: %s</string>
+    <string name="CTitulo">Título: %s</string>
     <string name="CRua">Rua: %s</string>
     <string name="CBairro">Bairro: %s</string>
     <string name="CCidade">Cidade: %s</string>
@@ -29,7 +29,5 @@
     <string name="ClatitudeDados"> %s</string>
     <string name="Clongitude">Longitude</string>
     <string name="ClongitudeDados"> %s</string>
-
-
 
 </resources>

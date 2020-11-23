@@ -70,11 +70,11 @@
                     android:textSize="12dp"/>
 
                 <TextView
-                    android:id="@+id/TextViewCEP"
+                    android:id="@+id/TextViewTitulo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
-                    android:text="@string/CCEP"
+                    android:text="@string/CTitulo"
                     android:textStyle="bold"
                     android:textSize="4pt"
                     android:textColor="@color/Marfim"/>
