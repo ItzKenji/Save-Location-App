@@ -7,8 +7,8 @@
         android:angle="-90"
         android:centerX="90"
         android:centerY="-90"
-        android:startColor="@color/white"
-        android:centerColor="#D30E0E0D"/>
+        android:startColor="#990E0E0D"
+        android:centerColor="#990E0E0D"/>
 
     <corners android:radius="30dp"/>
 
