@@ -3,6 +3,12 @@
     <string name="app_name">Save Location USJT QL</string>
 
     <string name="gps_permission_denied">Permission denied cannot get location.</string>
+    <string name="delete_dialog">Are you sure to delete this data?</string>
+    <string name="positive">Yes</string>
+    <string name="negative">No</string>
+    <string name="delete">Delete</string>
+    <string name="deleted">Successfully deleted.</string>
+    <string name="notDeleted">Deletion failed.</string>
 
     <string name="BAdicionarLocais">Add Places</string>
 

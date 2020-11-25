@@ -3,6 +3,12 @@
     <string name="app_name">Save Location USJT QL</string>
 
     <string name="gps_permission_denied">Permiso de acceso al GPS no concedido.</string>
+    <string name="delete_dialog">¿Estás segura de eliminar estos datos?</string>
+    <string name="positive">Si</string>
+    <string name="negative">No</string>
+    <string name="delete">Deletar</string>
+    <string name="deleted"> Eliminado con éxito.</string>
+    <string name="notDeleted">No eliminado.</string>
 
     <string name="BAdicionarLocais">Agregar Lugares</string>
 

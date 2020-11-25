@@ -40,13 +40,6 @@ import io.perfmark.Tag;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String CEP_KEY = "cep";
-    public static final String RUA_KEY = "rua";
-    public static final String NUMERO_KEY = "numero";
-    public static final String BAIRRO_KEY = "bairro";
-    public static final String CIDADE_KEY = "cidade";
-    public static final String ESTADO_KEY = "estado";
-    private static final String TAG = "MyActivity";
     private RecyclerView cardsLocaisRecyclerView;
     public static LocalAdapter adapter;
     public static List<Local> locais;
@@ -54,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
 
     private DocumentReference mDocRef = FirebaseFirestore.getInstance().collection("sampleData").document("Locais");
 
-    private Button voltarHome;
     private EditText editTextCEP;
     private EditText editTextRua;
     private EditText editTextNumero;
@@ -94,8 +86,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-
-
 
     }
 
