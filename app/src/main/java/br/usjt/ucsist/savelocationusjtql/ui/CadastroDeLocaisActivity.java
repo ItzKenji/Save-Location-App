@@ -37,6 +37,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -44,6 +46,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.zip.DataFormatException;
 
 import br.usjt.ucsist.savelocationusjtql.R;
 import br.usjt.ucsist.savelocationusjtql.model.Local;
@@ -56,8 +59,8 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
     private EditText editTextNumero;
     private EditText editTextBairro;
     private EditText editTextCidade;
-    private EditText editTextEstado;
-
+    private EditText editTextEstado;;
+    SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
     private TextView textViewLongitude;
     private TextView textViewLatitude;
 
@@ -145,6 +148,7 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
 
     public void completarCadastro( View view) {
         if(validarCampos()) {
+
             String tituloText = editTextTitulo.getText().toString();
             String ruaText = editTextRua.getText().toString();
             String numeroText = editTextNumero.getText().toString();
@@ -154,9 +158,10 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
             String latitudeText = textViewLatitude.getText().toString();
             String longitudeText = textViewLongitude.getText().toString();
 
-            Date data = new Date();
+            String data  = dateFormat.format(new Date());
 
-             Local localSave = new Local();
+            Local localSave = new Local();
+
 
             localSave.setTitulo(tituloText);
             localSave.setRua(ruaText);
