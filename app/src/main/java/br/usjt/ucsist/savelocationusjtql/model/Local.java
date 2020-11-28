@@ -12,11 +12,11 @@ public class Local {
     private String bairro;
     private String cidade;
     private String estado;
-    private Date dataCadastro;
+    private String dataCadastro;
 
     public Local(){}
 
-    public Local(String dadosLongitude, String dadosLatitude, String titulo, String rua, String numero, String bairro, String cidade, String estado) {
+    public Local(String dadosLongitude, String dadosLatitude, String titulo, String rua, String numero, String bairro, String cidade, String estado, String dataCadastro) {
         this.dadosLongitude = dadosLongitude;
         this.dadosLatitude = dadosLatitude;
         this.titulo = titulo;
@@ -45,11 +45,11 @@ public class Local {
         this.dadosLatitude = dadosLatitude;
     }
 
-    public Date getDataCadastro() {
+    public String getDataCadastro() {
         return dataCadastro;
     }
 
-    public void setDataCadastro(Date dataCadastro) {
+    public void setDataCadastro(String dataCadastro) {
         this.dataCadastro = dataCadastro;
     }
 

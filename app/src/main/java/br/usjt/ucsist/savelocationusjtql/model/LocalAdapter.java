@@ -46,7 +46,7 @@ public class LocalAdapter extends RecyclerView.Adapter<LocalAdapter.LocalViewHol
         holder.TextViewEstado.setText(context.getString(R.string.CEstado, l.getEstado()));
         holder.TextViewLatitude.setText(context.getString(R.string.ClatitudeDados, l.getDadosLatitude()));
         holder.TextViewLongitude.setText(context.getString(R.string.ClongitudeDados, l.getDadosLongitude()));
-
+        holder.DataCadastro.setText(context.getString(R.string.CdataDados, l.getDataCadastro()));
     }
 
     @Override

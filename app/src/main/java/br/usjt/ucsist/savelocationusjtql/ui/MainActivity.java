@@ -53,8 +53,7 @@ public class MainActivity extends AppCompatActivity {
     public static List<Local> locais;
     private FirebaseUser fireUser;
     private CollectionReference mMsgsReference;
-
-    private DocumentReference mDocRef = FirebaseFirestore.getInstance().collection("sampleData").document("Locais");
+    CollectionReference  mDocRef = FirebaseFirestore.getInstance().collection("NewLocais");
     private Button adicionarLocais;
 
     @Override
@@ -117,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                         locais.clear();
                         for(DocumentSnapshot doc:queryDocumentSnapshots.getDocuments()){
                             Local local = doc.toObject(Local.class);
-                            locais .add(local);
+                            locais.add(local);
                         }
                         adapter.notifyDataSetChanged();
                     }
@@ -127,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void dataToDelete(){
 
-        mDocRef.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+        mDocRef.document().delete().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
