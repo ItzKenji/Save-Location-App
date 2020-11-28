@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         cardsLocaisRecyclerView.setAdapter(adapter);
 
 
-        adicionarLocais = (Button) findViewById(R.id.buttonAdicionarLocais);
+        adicionarLocais = findViewById(R.id.buttonAdicionarLocais);
         adicionarLocais.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -138,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // Pode apagar ? Pq o metodo esta transparente ou seja não esta sendo utilizado...
     private void showDeleteDialog(String name){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.delete);

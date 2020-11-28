@@ -20,7 +20,6 @@ public class LocalAdapter extends RecyclerView.Adapter<LocalAdapter.LocalViewHol
 
     private List<Local> locais;
     private Context context;
-    private String name;
     private static ClickListener clickListener;
 
     public LocalAdapter(List<Local> locais, Context context){
@@ -40,7 +39,6 @@ public class LocalAdapter extends RecyclerView.Adapter<LocalAdapter.LocalViewHol
     @Override
     public void onBindViewHolder(@NonNull LocalViewHolder holder, int position) {
         Local l = locais.get(position);
-        //holder.DataCadastro.setText(context.getString(R.string.CdataDados, DateHelper.format(l.getDataCadastro())));
         holder.TextViewTitulo.setText(context.getString(R.string.CTitulo, l.getTitulo()));
         holder.TextViewRua.setText(context.getString(R.string.CRua, l.getRua()));
         holder.TextViewBairro.setText(context.getString(R.string.CBairro, l.getBairro()));

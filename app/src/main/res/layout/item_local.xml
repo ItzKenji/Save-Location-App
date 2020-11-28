@@ -22,41 +22,30 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:padding="6dp">
+            android:padding="8dp">
 
-            <ImageView
-                android:id="@+id/ImgLugar"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="6dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:src="@drawable/ic_photo"/>
 
             <LinearLayout
                 android:id="@+id/LLDescricao"
-                android:layout_width="wrap_content"
+                android:layout_width="187dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="2dp"
+                android:layout_marginStart="13dp"
                 android:layout_marginLeft="4dp"
-                android:layout_toRightOf="@+id/ImgLugar"
-                android:layout_toEndOf="@+id/ImgLugar"
+                android:layout_marginTop="2dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/DataDeCadastro"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
                     android:layout_marginEnd="6dp"
                     android:layout_marginRight="6dp"
                     android:text="@string/CDataDeCadastro"
                     android:textColor="@color/black"
-                    android:textSize="15dp"
-                    android:textStyle="bold"/>
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/DataCadastro"
@@ -64,10 +53,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="6dp"
                     android:text="@string/CdataDados"
-                    android:textAlignment="center"
                     android:textColor="@color/Marfim"
-                    android:textStyle="bold"
-                    android:textSize="12dp"/>
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/TextViewTitulo"
@@ -75,27 +63,29 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
                     android:text="@string/CTitulo"
-                    android:textStyle="bold"
-                    android:textSize="4pt"
-                    android:textColor="@color/Marfim"/>
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/TextViewRua"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
                     android:text="@string/CRua"
-                    android:textStyle="bold"
-                    android:textSize="4pt"
-                    android:textColor="@color/Marfim"/>
+                    android:textColor="@color/Marfim"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/TextViewBairro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
                     android:text="@string/CBairro"
-                    android:textStyle="bold"
-                    android:textSize="4pt"
-                    android:textColor="@color/Marfim"/>
+                    android:textColor="@color/Marfim"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/TextViewCidade"
@@ -103,9 +93,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
                     android:text="@string/CCidade"
-                    android:textStyle="bold"
-                    android:textSize="4pt"
-                    android:textColor="@color/Marfim"/>
+                    android:textColor="@color/Marfim"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/TextViewEstado"
@@ -113,9 +103,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
                     android:text="@string/CEstado"
-                    android:textStyle="bold"
-                    android:textSize="4pt"
-                    android:textColor="@color/Marfim"/>
+                    android:textColor="@color/Marfim"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -141,7 +131,7 @@
                     android:layout_marginRight="6dp"
                     android:text="@string/CLatitude"
                     android:textColor="@color/black"
-                    android:textSize="15dp"
+                    android:textSize="17dp"
                     android:textStyle="bold"/>
 
                 <TextView
@@ -151,7 +141,7 @@
                     android:layout_marginBottom="8dp"
                     android:text="@string/ClatitudeDados"
                     android:textColor="@color/Marfim"
-                    android:textSize="12dp"
+                    android:textSize="15dp"
                     android:textStyle="bold"/>
 
                 <TextView
@@ -163,7 +153,7 @@
                     android:layout_marginRight="6dp"
                     android:text="@string/Clongitude"
                     android:textColor="@color/black"
-                    android:textSize="15dp"
+                    android:textSize="17dp"
                     android:textStyle="bold"/>
 
                 <TextView
@@ -173,7 +163,7 @@
                     android:layout_marginBottom="2dp"
                     android:text="@string/ClongitudeDados"
                     android:textColor="@color/Marfim"
-                    android:textSize="12dp"
+                    android:textSize="15dp"
                     android:textStyle="bold"/>
 
             </LinearLayout>

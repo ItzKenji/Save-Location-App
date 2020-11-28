@@ -51,24 +51,15 @@ import br.usjt.ucsist.savelocationusjtql.model.LocalAdapter;
 
 public class CadastroDeLocaisActivity extends AppCompatActivity {
 
-    private RecyclerView cardsLocaisRecyclerView;
-    private LocalAdapter adapter;
-    private List<Local> listaLocal;
-    private CollectionReference locaisReference;
-
-    private Button voltarHome;
     private EditText editTextTitulo;
     private EditText editTextRua;
     private EditText editTextNumero;
     private EditText editTextBairro;
     private EditText editTextCidade;
     private EditText editTextEstado;
-    private ImageView fotoLocal;
-    private TextView linkFotoLocal;
 
     private TextView textViewLongitude;
     private TextView textViewLatitude;
-    private Button adicionarLocais;
 
     private static final String TAG = "MyActivity";
 
@@ -116,23 +107,14 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_de_locais);
 
-        editTextTitulo = (EditText) findViewById(R.id.editTextTitulo);
-        editTextRua = (EditText) findViewById(R.id.editTextRua);
-        editTextNumero = (EditText) findViewById(R.id.editTextNumero);
-        editTextBairro = (EditText) findViewById(R.id.editTextBairro);
-        editTextCidade = (EditText) findViewById(R.id.editTextCidade);
-        editTextEstado = (EditText) findViewById(R.id.editTextEstado);
-        textViewLatitude = (TextView) findViewById(R.id.textViewLatitude);
-        textViewLongitude = (TextView) findViewById(R.id.textViewLongitude);
-        fotoLocal = (ImageView) findViewById(R.id.fotoLocal);
-        linkFotoLocal = (TextView) findViewById(R.id.linkFotoLocal);
-
-        linkFotoLocal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tirarFoto();
-            }
-        });
+        editTextTitulo = findViewById(R.id.editTextTitulo);
+        editTextRua = findViewById(R.id.editTextRua);
+        editTextNumero = findViewById(R.id.editTextNumero);
+        editTextBairro = findViewById(R.id.editTextBairro);
+        editTextCidade = findViewById(R.id.editTextCidade);
+        editTextEstado = findViewById(R.id.editTextEstado);
+        textViewLatitude = findViewById(R.id.textViewLatitude);
+        textViewLongitude = findViewById(R.id.textViewLongitude);
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
@@ -159,39 +141,6 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
             public void onProviderDisabled(String provider) {
             }
         };
-    }
-
-    private void tirarFoto() {
-        dispatchTakePictureIntent();
-    }
-
-    static final int REQUEST_IMAGE_CAPTURE = 1;
-
-    private void dispatchTakePictureIntent() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        }
-    }
-
-//    public CadastroDeLocaisActivity(LocalAdapter adapter, List<Local> listaLocal ){
-//
-//        this.adapter = adapter;
-//        this.listaLocal = listaLocal;
-//
-//    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
-            fotoLocal.setImageBitmap(imageBitmap);
-            //contatoCorrente.setImagem(ImageUtil.encode(imageBitmap));
-            //Log.d("IMAGEMBITMAPENCODED-->",contatoCorrente.getImagem());
-        }
-
     }
 
     public void completarCadastro( View view) {
@@ -232,13 +181,7 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
                             Log.w(TAG, "Error adding document", e);
                         }
                     });
-//            Local l = new Local ( longitudeText, latitudeText, tituloText, ruaText, numeroText, bairroText, cidadeText, estadoText);
-//            MainActivity.locais.add(l);
-//            MainActivity.adapter.notifyDataSetChanged();
             finish();
-
-//            Intent intent = new Intent(CadastroDeLocaisActivity.this, MainActivity.class);
-//            startActivity(intent);
         }
     }
 
