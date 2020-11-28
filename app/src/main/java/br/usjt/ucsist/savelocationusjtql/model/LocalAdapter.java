@@ -8,30 +8,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import br.usjt.ucsist.savelocationusjtql.R;
 
-public class LocalAdapter extends RecyclerView.Adapter<LocalViewHolder> {
+public class LocalAdapter extends RecyclerView.Adapter<LocalAdapter.LocalViewHolder> {
 
     private List<Local> locais;
     private Context context;
-    private DocumentReference mDocRef = FirebaseFirestore.getInstance().collection("sampleData").document("Locais");
     private String name;
+    private static ClickListener clickListener;
 
     public LocalAdapter(List<Local> locais, Context context){
         this.locais = locais;
@@ -59,54 +49,57 @@ public class LocalAdapter extends RecyclerView.Adapter<LocalViewHolder> {
         holder.TextViewLatitude.setText(context.getString(R.string.ClatitudeDados, l.getDadosLatitude()));
         holder.TextViewLongitude.setText(context.getString(R.string.ClongitudeDados, l.getDadosLongitude()));
 
-        holder.setOnLongClickListener(new LocalViewHolder.LongClickListener() {
-            @Override
-            public void onItemLongClick(View v, int position) {
-                showDeleteDialog(name);
-            }
-        });
-
-    }
-
-    private void dataToDelete(){
-
-        mDocRef.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(context, R.string.deleted, 2).show();
-                }
-                else Toast.makeText(context, R.string.notDeleted, 2).show();
-            }
-        });
-        notifyDataSetChanged();
-    }
-
-    private void showDeleteDialog(String name){
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(R.string.delete);
-        builder.setMessage(R.string.delete_dialog);
-        builder.setPositiveButton(R.string.positive, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dataToDelete();
-            }
-        });
-        builder.setNegativeButton(R.string.negative, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-                dialog.dismiss();
-            }
-        });
-
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-
     }
 
     @Override
     public int getItemCount() {
         return locais.size();
+    }
+
+    public interface ClickListener {
+        void onItemClick(int position, View v);
+        void onItemLongClick(int position, View v);
+    }
+
+    public void setOnItemClickListener(ClickListener clickListener) {
+        LocalAdapter.clickListener = clickListener;
+    }
+
+    public class LocalViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
+        TextView DataCadastro;
+        TextView TextViewTitulo;
+        TextView TextViewRua;
+        TextView TextViewBairro;
+        TextView TextViewCidade;
+        TextView TextViewEstado;
+        TextView TextViewLatitude;
+        TextView TextViewLongitude;
+
+
+        public LocalViewHolder(View raiz){
+            super(raiz);
+            this.DataCadastro = raiz.findViewById(R.id.DataCadastro);
+            this.TextViewTitulo = raiz.findViewById(R.id.TextViewTitulo);
+            this.TextViewRua = raiz.findViewById(R.id.TextViewRua);
+            this.TextViewBairro = raiz.findViewById(R.id.TextViewBairro);
+            this.TextViewCidade = raiz.findViewById(R.id.TextViewCidade);
+            this.TextViewEstado = raiz.findViewById(R.id.TextViewEstado);
+            this.TextViewLatitude = raiz.findViewById(R.id.DadosDeLatitude);
+            this.TextViewLongitude = raiz.findViewById(R.id.DadosDeLongitude);
+            raiz.setOnClickListener(this);
+            raiz.setOnLongClickListener(this);
+
+        }
+
+        @Override
+        public void onClick(View v) {
+            clickListener.onItemClick(getAdapterPosition(), v);
+        }
+
+        @Override
+        public boolean onLongClick(View v) {
+            clickListener.onItemLongClick(getAdapterPosition(), v);
+            return false;
+        }
     }
 }

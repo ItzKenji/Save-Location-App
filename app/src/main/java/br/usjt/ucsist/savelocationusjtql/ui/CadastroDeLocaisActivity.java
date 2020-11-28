@@ -72,8 +72,7 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
 
     private static final String TAG = "MyActivity";
 
-    private DocumentReference mDocRef = FirebaseFirestore.getInstance().collection("sampleData").document("Locais");
-
+    FirebaseFirestore  firebaseFirestore = FirebaseFirestore.getInstance();
     private LocationManager locationManager;
     private LocationListener locationListener;
     private static final int GPS_REQUEST_PERMISSION_CODE = 1001;
@@ -206,21 +205,21 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
             String latitudeText = textViewLatitude.getText().toString();
             String longitudeText = textViewLongitude.getText().toString();
 
-            if (tituloText.isEmpty() || ruaText.isEmpty() || numeroText.isEmpty() || bairroText.isEmpty() || cidadeText.isEmpty() || estadoText.isEmpty()) {
-                return;
-            }
-            Map<String, Object> dataToSave = new HashMap<String, Object>();
+            Date data = new Date();
 
-            dataToSave.put("titulo", tituloText);
-            dataToSave.put("rua", ruaText);
-            dataToSave.put("numero", numeroText);
-            dataToSave.put("bairro", bairroText);
-            dataToSave.put("cidade", cidadeText);
-            dataToSave.put("estado", estadoText);
-            dataToSave.put("dadosLatitude", latitudeText);
-            dataToSave.put("dadosLongitude", longitudeText);
-            mDocRef.collection("Sla")
-                    .add(dataToSave)
+             Local localSave = new Local();
+
+            localSave.setTitulo(tituloText);
+            localSave.setRua(ruaText);
+            localSave.setNumero(numeroText);
+            localSave.setBairro(bairroText);
+            localSave.setCidade(cidadeText);
+            localSave.setEstado(estadoText);
+            localSave.setDadosLatitude(latitudeText);
+            localSave.setDadosLongitude(longitudeText);
+            localSave.setDataCadastro(data);
+            firebaseFirestore.collection("NewLocais")
+                    .add(localSave)
                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
@@ -233,9 +232,9 @@ public class CadastroDeLocaisActivity extends AppCompatActivity {
                             Log.w(TAG, "Error adding document", e);
                         }
                     });
-            Local l = new Local ( longitudeText, latitudeText, tituloText, ruaText, numeroText, bairroText, cidadeText, estadoText);
-            MainActivity.locais.add(l);
-            MainActivity.adapter.notifyDataSetChanged();
+//            Local l = new Local ( longitudeText, latitudeText, tituloText, ruaText, numeroText, bairroText, cidadeText, estadoText);
+//            MainActivity.locais.add(l);
+//            MainActivity.adapter.notifyDataSetChanged();
             finish();
 
 //            Intent intent = new Intent(CadastroDeLocaisActivity.this, MainActivity.class);
